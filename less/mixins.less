@@ -1,1 +1,26 @@
 // Mixins in here
+
+
+.bttn(@bg-color, @size, @font-color){
+    display: block;
+    background-color: @bg-color;
+    margin: 2% 2%;
+    cursor: pointer;
+    width: @size;
+    height: 45px;
+    font-size: 2rem;
+    border-radius: 10px;
+    color:@font-color;
+}
+
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
+}
