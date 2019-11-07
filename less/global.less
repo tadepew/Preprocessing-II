@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  padding: 0 auto;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 html {
@@ -8,6 +11,7 @@ html {
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  color:@shark;
 }
 
 h1, h2, h3, h4, h5 {
@@ -40,5 +44,12 @@ img {
 }
 
 .container {
-  .margins(0 auto);
+max-width: 800px;
+width: 100%;
+margin: 0 auto;
+
+@media @mobile {
+  margin-left: 4%;
+  margin-right: 4%;
+}
 }

@@ -1,8 +1,20 @@
-.home {
+hr {
+  border: 0 none;
+  border-top: 2px dashed @navigation-border;
+  background: none;
+  height:0;
+}
 
+.home {
+max-width: 800px;
+width: 90%;
+margin: 0 auto;
+
+
+ 
   .top-content {
     padding: 2% 0;
-    border-bottom: 1px dashed grey;
+    border-bottom: 2px dashed @navigation-border;
   }
 
   .content-section {
@@ -11,16 +23,28 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media @mobile {
+      flex-direction: column;
+    }
    
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+        padding-left: 0%;
+      }
 
       img {
         border-radius: 10px;
@@ -31,6 +55,8 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+
+  
 
     .text-content {
       padding-left: 1%;
@@ -43,9 +69,28 @@
     }
   }
 
+  @media @mobile {
+    .inverse-content{
+      display:flex;
+      flex-direction:column;
+    }
+    .text-content {
+      order: 1;
+      padding-left: 0%;
+    }
+    .img-content {
+      order: 2;
+      padding-left: 0%;
+  }
+}
+
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+
+    @media @mobile {
+      width: 100%;
+    }
 
     img {
       border-radius: 10px;
@@ -58,12 +103,32 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile {
+    flex-direction:column;
+    align-items:center;
+    padding: 30px 6% 0 6%;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
 
+      @media @mobile {
+        width: 90%;
+      }
+
       .smu {
-        .bttn(teal, 200px, white);
+        .bttn(@eastern-blue, 200px, white);
+        .keyframes(fade-in;{
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+          });
+      
+        .animation(fade-in 0.2s linear infinite alternate);
+
+      @media @mobile {
+        .bttn(@eastern-blue, 100%, white);
+      }
       }
     }
   }
